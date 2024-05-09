@@ -1,0 +1,43 @@
+# action.yml for push-action.js
+name: Push Action
+description: A GitHub Action to push Docker images using facetsctl.
+inputs:
+  username:
+    description: 'Username for facetsctl login.'
+    required: true
+  token:
+    description: 'Token for facetsctl login.'
+    required: true
+  cp-url:
+    description: 'URL of the Control plane for facetsctl login.'
+    required: true
+  docker-image:
+    description: 'Docker image URL in the external registry.'
+    required: true
+  artifact-name:
+    description: 'Name of the artifact as mentioned in blueprint.'
+    required: true
+  external-id:
+    description: 'External identifier for artifact.'
+    required: true
+  registration-type:
+    description: 'Mode of registration (CLUSTER|RELEASE_STREAM).'
+    required: true
+  registration-value:
+    description: 'Value for release stream or cluster id, based on mode of registration.'
+    required: false
+  description:
+    description: 'Description of the build.'
+    required: false
+  artifactory:
+    description: 'Artifactory where the image will be pushed.'
+    required: false
+  debug:
+    description: 'See original error message thrown.'
+    required: false
+  git-ref:
+    description: 'Git ref provided in CI Rule.'
+    required: false
+runs:
+  using: 'node12'
+  main: 'push-action.js'
