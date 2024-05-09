@@ -1,4 +1,5 @@
-name: facetsctl Push Action
+# action.yml for push-action.js
+name: Push Action
 description: A GitHub Action to push Docker images using facetsctl.
 inputs:
   username:
@@ -36,6 +37,9 @@ inputs:
     required: false
   git-ref:
     description: 'Git ref provided in CI Rule.'
+    required: false
+  autodetect-git-ref:
+    description: 'Automatically detect the git-ref from branch/tag being built.'
     required: false
 runs:
   using: 'node12'
