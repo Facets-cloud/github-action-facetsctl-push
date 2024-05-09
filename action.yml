@@ -1,5 +1,5 @@
 # action.yml for push-action.js
-name: Push Action
+name: facetsctl Push Action
 description: A GitHub Action to push Docker images using facetsctl.
 inputs:
   username:
